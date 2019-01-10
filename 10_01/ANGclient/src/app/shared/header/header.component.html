@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <ul>
+      <li *ngFor="let item of myNav">
+        <a 
+          [href]="item.href" 
+          [innerText]="item.content"
+          [ngClass]="{ 'isActive': item.isActive }"
+          (click)="item.isActive = !item.isActive"
+        ></a>
+    </li>
+    </ul>
+  </nav>
+</header>

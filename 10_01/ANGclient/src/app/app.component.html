@@ -1,0 +1,19 @@
+<!-- Intégrer un composant -->
+<app-header></app-header>
+
+<h1
+  [innerHTML]="myTitle"
+  (click)="displayAlert()"
+></h1>
+
+<h2
+  [innerHTML]="'Bonjour ' + userName"
+></h2>
+
+<form>
+  <input
+    [(ngModel)]="userName"
+    name="userName"
+    type="text"
+  >
+</form>
