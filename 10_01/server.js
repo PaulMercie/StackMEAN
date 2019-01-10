@@ -1,6 +1,9 @@
 /*
 Imports and configuration
 */
+    //=> Add the .env variable to the environnement variables
+    require('dotenv').config()
+
     const express = require("express")
     const path = require("path")
     const ejs = require("ejs")
@@ -10,7 +13,7 @@ Imports and configuration
 Server configuration
 */
     const server = express()
-    const port = 9845
+    const port = process.env.PORT
 
     //=> Set view engine
     server.engine('html', ejs.renderFile)
