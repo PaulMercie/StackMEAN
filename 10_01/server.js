@@ -7,6 +7,9 @@ Imports and configuration
     const express = require("express")
     const path = require("path")
     const ejs = require("ejs")
+
+    //=> MongoDB
+    const mongoDb = require('./services/db.srvices')
 //
 
 /*
@@ -27,7 +30,15 @@ Server configuration
 /*
 Launch server
 */
-    server.listen(port, () => {
-        console.log(`Server is running on port: ${port}`)
+    //=> Connect MongoDB
+    mongoDb.initConnection()
+    .then( dbResponse => {
+        console.log('MongoDB is connected: ' + dbResponse)
+
+        // Launch server
+        server.listen(port, () => {
+            console.log(`Server is running on port: ${port}`)
+        })
     })
+    .catch( dbError => console.error(dbError) )
 //
