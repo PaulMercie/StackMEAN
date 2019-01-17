@@ -10,6 +10,9 @@ Imports and configuration
 
     //=> MongoDB
     const mongoDb = require('./services/db.srvices')
+
+    //=> Routes
+    const frontRoutes = require('./routes/front.routes')
 //
 
 /*
@@ -25,6 +28,9 @@ Server configuration
     //=> Use path to add views
     server.set('views', __dirname + '/www')
     server.use(express.static(path.join(__dirname, '/www')))
+
+    //=> Set routes
+    server.use('/', frontRoutes)
 //
 
 /*
