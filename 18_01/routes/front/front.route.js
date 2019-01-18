@@ -7,7 +7,8 @@ Imports
 /*
 Configuration
 */
-    class FrontRouterClass{
+    class FrontRouterClass
+    {
         // Définition
         routes(){
             // Homepage

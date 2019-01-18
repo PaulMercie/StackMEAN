@@ -22,7 +22,8 @@ Configuration
     // Création du serveur
     const server = express()
 
-    class ServerClass{
+    class ServerClass
+    {
         // Création de la méthode "init()" --> Initialisation du serveur
         init(){
             // Configuartion du dossier client (www)

@@ -5,6 +5,7 @@ Imports
     const { Router } = require('express')
     // Importation des class des routes
     const FrontRouterClass = require('./front/front.route')
+    const ApiRouterClass = require('./api/api.route')
 
 /*
 Définir les routes
@@ -13,11 +14,13 @@ Définir les routes
     const mainRouter = Router()
     // Enfant
     const frontRoute = new FrontRouterClass()
+    const apiRouter = new ApiRouterClass()
 
 /*
 Gestion des routes
 */
     // Routes Front
+    mainRouter.use('/api', apiRouter.init())
     mainRouter.use('/', frontRoute.init())
 
 /*
