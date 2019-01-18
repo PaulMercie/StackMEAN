@@ -12,6 +12,9 @@ Imports
 
     //=> Intégrer le module "ejs"
     const ejs = require('ejs')
+    
+    //=> Importer le fichier main.router
+    const { mainRouter } = require('./routes/main.router')
 
 /*
 Configuration
@@ -30,13 +33,18 @@ Configuration
             server.engine('html', ejs.renderFile)
             server.set('view engine', 'html')
 
+            // Configuration du routeur
+            server.use('/', mainRouter)
+
             // Lancer le serveur
             this.launch()
         }
+        
         // Création de la fonction "launch()" --> Ecouter le port de notre serveur
         launch()
         {
-            server.listen(process.env.PORT, () => {
+            server.listen(process.env.PORT, () => 
+            {
                 console.log(`Server listening on port ${process.env.PORT}`)
             })
         }
