@@ -1,3 +1,7 @@
+# Si vous récupérez le dossier
+- #1 npm i pour récuperer les modules
+- #2 Refaire un fichier .env avec le PORT du serveur
+
 # Etape de création d'un serveur NodeJS
 - 1# Créer un fichier "server.js" à la racine du dossier
 - 2# Lancer la commande "npm init -y" (initialiser le serveur)
